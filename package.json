@@ -1,0 +1,91 @@
+{
+  "name": "vscode-scrum-extension",
+  "displayName": "vscode-scrum-extension",
+  "description": "A vscode extension for scrum project management",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.74.0"
+  },
+  "activationEvents": [],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "vsscrum-sidebar-view",
+          "title": "Scrum Project Manager",
+          "icon": "media/clippy.svg"
+        }
+      ]
+    },
+    "views": {
+      "vsscrum-sidebar-view": [
+        {
+          "type": "webview",
+          "id": "vsscrum-sidebar",
+          "name": "Scrum Project Manager",
+          "icon": "media/clippy.svg",
+          "contextualTitle": "Scrum Project Manager"
+        }
+      ]
+    },
+    "commands": [
+      {
+        "command": "vscode-scrum-extension.authenticate",
+        "title": "Start Srum project management",
+        "category": "Scrum management"
+      },
+      {
+        "command": "vscode-scrum-extension.refresh",
+        "title": "Refresh",
+        "category": "Scrum management"
+      }
+    ]
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "vscode": "*"
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run package",
+    "compile": "webpack",
+    "watch": "concurrently \"rollup -c -w\" \"webpack --watch\"",
+    "package": "webpack --mode production --devtool hidden-source-map",
+    "compile-tests": "tsc -p . --outDir out",
+    "watch-tests": "tsc -p . -w --outDir out",
+    "pretest": "npm run compile-tests && npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^14.0.0",
+    "@rollup/plugin-node-resolve": "^8.0.0",
+    "@rollup/plugin-typescript": "^6.0.0",
+    "@tsconfig/svelte": "^1.0.0",
+    "@types/glob": "^8.0.0",
+    "@types/mocha": "^10.0.1",
+    "@types/node": "16.x",
+    "@types/polka": "^0.5.4",
+    "@types/vscode": "^1.74.0",
+    "@typescript-eslint/eslint-plugin": "^5.45.0",
+    "@typescript-eslint/parser": "^5.45.0",
+    "@vscode/test-electron": "^2.2.0",
+    "concurrently": "^7.6.0",
+    "dotenv-safe": "^8.2.0",
+    "eslint": "^8.28.0",
+    "express-basic-auth": "^1.2.1",
+    "glob": "^8.0.3",
+    "mocha": "^10.1.0",
+    "polka": "^0.5.2",
+    "rollup": "^2.3.4",
+    "rollup-plugin-svelte": "^6.0.0",
+    "rollup-plugin-terser": "^7.0.0",
+    "svelte": "^3.0.0",
+    "svelte-check": "^1.0.0",
+    "svelte-preprocess": "^4.0.0",
+    "ts-loader": "^8.0.11",
+    "typescript": "^4.0.2",
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.0"
+  }
+}
