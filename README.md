@@ -1,6 +1,8 @@
 # vscode-scrum-extension README
 
-This is the README for your extension "vscode-scrum-extension". After writing up a brief description, we recommend including the following sections.
+The project is a Visual Studio Code (VS Code) extension backed by a web application that provides the facilities necessary to manage project development through the scrum framework. This project’s primary objective was to guide project managers through the scrum development framework based on the Agile approach to increase consistent success and manage success factors to improve efficiency for systematic projects. This software also provides facilities for managing specific success factors identified by scholars in various literature sources to solve the problem of high project failure rates and inefficient resource utilization during project design, implementation, and maintenance. It defines project success as meeting project objectives efficiently. A Visual Studio Code extension will increase accessibility to the software during project development to save time and resources.
+
+This project’s primary objective is to help project managers apply the scrum framework, which is based on the agile methodology, efficiently to control success factors and increase service consistency for systematic projects. A Visual Studio Code plugin will make the program more accessible while software projects are under development to save time and resources
 
 ## Features
 
